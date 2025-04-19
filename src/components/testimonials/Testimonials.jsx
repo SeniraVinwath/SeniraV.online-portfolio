@@ -9,7 +9,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 // import required modules
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 
 import './testimonials.css'
 
@@ -20,10 +20,14 @@ const Testimonials = () => {
             <p className="section__subtitle">
                 What <span>They Say</span>
             </p>
-    
+            
             <Swiper
             pagination={{
               clickable: true,
+            }}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
             }}
             breakpoints={{
               540: {
@@ -39,7 +43,7 @@ const Testimonials = () => {
                 spaceBetween: 40,
               },
             }}
-            modules={[Pagination]}
+            modules={[Pagination, Autoplay]}
             className="testimonials__container container mySwiper">
                 {testimonials.map(({img, name, author, description}, index) => {
                     return (
@@ -48,15 +52,15 @@ const Testimonials = () => {
                                 <div className="testimonial__icon">
                                     <img src={testimonialIcon} alt="" />
                                 </div>
-
+                                
                                 <img src={img} alt="" className="testimonial__img" />
                             </div>
-
+                            
                             <p className="testimonial__description">{description}</p>
-
+                            
                             <h3 className="testimonial__name">{name}</h3>
                             <p className="testimonial__author">{author}</p>
-
+                            
                             <img src={shapeFive} alt="" className="shape c__shape" />
                         </SwiperSlide>
                     )

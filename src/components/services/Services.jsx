@@ -10,7 +10,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 // import required modules
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 
 import './services.css'
 
@@ -26,6 +26,10 @@ const Services = () => {
         pagination={{
           clickable: true,
         }}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
         breakpoints={{
           540: {
             slidesPerView: 1,
@@ -40,7 +44,7 @@ const Services = () => {
             spaceBetween: 40,
           },
         }}
-        modules={[Pagination]}
+        modules={[Pagination, Autoplay]}
         className="services__container container mySwiper">
             {services.map(({name, title, description}, index) => {
                 return (
