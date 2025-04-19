@@ -91,6 +91,8 @@
     height: 60px;
     border-radius: 30px;
     padding-inline: 30px;
+    width: 100%; /* Ensure inputs take full width */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .contact__form-area .contact__form-input {
@@ -124,5 +126,44 @@
     
     .contact__card-icon::after {
         width: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact__form-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact__submit {
+        flex-wrap: wrap;
+        row-gap: 15px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .contact__card {
+        padding-left: 70px;
+    }
+    
+    .contact__form-input {
+        padding-inline: 20px;
+    }
+    
+    .contact__form-tag {
+        margin-left: 20px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .contact__card {
+        padding-left: 60px;
+    }
+    
+    .contact__form-group {
+        gap: 20px;
+    }
+    
+    .contact__card-icon::after {
+        width: 10px;
     }
 }
