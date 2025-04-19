@@ -1,0 +1,250 @@
+/* header.css */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 100;
+    transition: all 0.4s ease;
+    background-color: transparent; /* Start transparent */
+    height: 80px; /* Setting a specific height */
+}
+
+/* Apply background when scrolled */
+.header.scrolled {
+    background-color: var(--header-background-color);
+    box-shadow: 0 5px 15px var(--header-shadow-color);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.nav__logo {
+    color: var(--title-color);
+    font-size: var(--h4-font-size, 1.5rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.nav__toggle {
+    height: 30px;
+    width: 28px;
+    position: relative;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.nav__toggle span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--title-color);
+    transition: all 0.3s ease;
+}
+
+.nav__toggle span:first-child {
+    top: 8px;
+}
+
+.nav__toggle span:last-child {
+    bottom: 8px;
+}
+
+.nav__btns {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+}
+
+.theme__toggler {
+    font-size: 1.25rem;
+    cursor: pointer;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--title-color);
+    transition: var(--transition);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.theme__toggler:hover {
+    background-color: rgba(var(--primary-color-rgb), 0.1);
+}
+
+.theme__toggler svg {
+    transition: transform 0.3s ease;
+}
+
+.theme__toggler:hover svg {
+    transform: rotate(30deg);
+}
+
+.animate-toggle span:first-child {
+    transform: rotate(-45deg);
+    top: 14px;
+}
+
+.animate-toggle span:last-child {
+    transform: rotate(45deg);
+    bottom: 14px;
+}
+
+.nav__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100vh;
+    background-color: var(--background-color-alt);
+    transition: width 0.3s ease;
+    z-index: 10;
+    display: flex;
+    overflow: hidden;
+}
+
+.show__menu {
+    width: 512px;
+}
+
+.nav__data {
+    padding: 100px 60px;
+    margin: auto;
+    width: 100%;
+}
+
+.nav__list {
+    margin-bottom: 40px;
+}
+
+.nav__list li {
+    margin-bottom: 20px;
+}
+
+.nav__link {
+    color: var(--title-color);
+    font-size: var(--h5-font-size, 1.25rem);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav__link:hover {
+    color: var(--primary-color);
+}
+
+/* This is the key fix - ensuring active class applies the primary color */
+.nav__link.active {
+    color: var(--primary-color);
+}
+
+.header__socials {
+    display: flex;
+    column-gap: 25px;
+    margin-bottom: 30px;
+}
+
+.header__social-link {
+    color: var(--title-color);
+    font-size: var(--h5-font-size, 1.25rem);
+    transition: all 0.3s ease;
+}
+
+.header__social-link:hover {
+    color: var(--primary-color);
+}
+
+/* No-scroll class for body when menu is open */
+.no-scroll {
+    overflow: hidden;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+    .nav {
+        padding: 0 20px;
+    }
+    
+    .show__menu {
+        width: 450px;
+    }
+    
+    .nav__data {
+        padding: 100px 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 15px 0;
+    }
+    
+    .header.scrolled {
+        padding: 12px 0;
+    }
+    
+    .nav {
+        padding: 0 15px;
+    }
+    
+    .show__menu {
+        width: 350px;
+    }
+    
+    .nav__data {
+        padding: 80px 30px;
+    }
+    
+    .nav__btns {
+        column-gap: 20px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .nav__logo {
+        font-size: var(--h5-font-size, 1.25rem);
+    }
+    
+    .show__menu {
+        width: 100%;
+    }
+    
+    .nav__data {
+        padding: 80px 20px;
+    }
+    
+    .nav__link {
+        font-size: var(--normal-font-size, 1rem);
+    }
+    
+    .header__social-link {
+        font-size: var(--normal-font-size, 1rem);
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .nav {
+        padding: 0 10px;
+    }
+    
+    .nav__btns {
+        column-gap: 15px;
+    }
+}

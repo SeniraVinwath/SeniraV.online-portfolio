@@ -1,0 +1,117 @@
+.skills {
+    background-image: var(--third-gradient);
+}
+
+.skills__container {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 70px;
+}
+
+.skills__titles,
+.skills__description {
+    padding-inline: 30px;
+}
+
+/* Make each skills item a consistent height */
+.skills__item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.skills__titles {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.skills__name {
+    font-size: var(--largest-font-size);
+    margin: 0;
+}
+
+.skills__number {
+    color: var(--title-color);
+    font-weight: 700;
+    font-size: var(--largest-font-size);
+    margin: 0;
+}
+
+.skills__number span {
+    color: var(--primary-color);
+    display: inline;
+}
+
+.skills__description {
+    margin-bottom: 30px;
+    margin-top: 15px;
+    /* Fixed height rather than min-height */
+    height: 80px;
+    overflow: hidden;
+    /* For multiline ellipsis with both standard and vendor properties */
+    display: -webkit-box;
+    display: box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+/* Bar section - position at bottom to ensure consistent layout */
+.skills__bar-container {
+    margin-top: auto;
+    width: 100%;
+}
+
+.skills__bar, .skills__percentage {
+    height: 2px;
+}
+
+.skills__bar {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.skills__percentage {
+    background-color: var(--primary-color);
+    display: block; /* Ensure the span behaves as a block */
+    position: relative;
+}
+
+.skills__percentage span {
+    background-color: var(--container-color);
+    border: 2px solid var(--border-color);
+    box-shadow: var(--shadow);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    top: -12px;
+}
+
+/* Add responsive styling for smaller screens */
+@media screen and (max-width: 992px) {
+    .skills__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .skills__description {
+        height: 70px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .skills__container {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills__description {
+        height: auto;
+        max-height: 100px;
+    }
+}

@@ -1,0 +1,194 @@
+.resume {
+    background-image: var(--second-gradient);
+}
+
+.resume__container {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.resume__heading {
+    text-align: center;
+    font-size: var(--h1-font-size);
+    padding-bottom: 30px;
+    font-family: var(--second-font);
+    text-shadow: var(--text-shadow);
+    line-height: 1.2;
+    margin-top: 15px;
+}
+
+.resume__heading2 {
+    text-align: center;
+    font-size: var(--h1-font-size);
+    padding-bottom: 30px;
+    font-family: var(--second-font);
+    text-shadow: var(--text-shadow);
+    line-height: 1.2;
+    margin-top: 15px;
+}
+
+.resume__item {
+    border-bottom: 2px solid var(--border-color);
+}
+
+.resume__item:not(:first-child) {
+    border-right: 2px solid var(--border-color);
+}
+
+.resume__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* Default collapsed state - just enough for the header */
+    height: auto;
+    transition: all 0.4s ease;
+}
+
+/* Apply expanded styles explicitly */
+.resume__item.expanded {
+    height: auto;
+}
+
+/* Simple grid layout for items */
+.resume__items {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.resume__header {
+    padding: 32px 30px;
+    cursor: pointer;
+}
+
+.resume__subtitle {
+    font-size: var(--largest-font-size);
+    cursor: pointer;
+}
+
+.resume__icon {
+    background-color: var(--container-color);
+    border: 2px solid var(--border-color);
+    font-size: var(--h2-font-size);
+    box-shadow: var(--shadow);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    position: absolute;
+    right: -24px;
+    bottom: -24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+
+/* This is critical - the content element must be fully hidden when collapsed */
+.resume__content {
+    padding: 0;
+    margin: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: 
+        height 0.3s ease,
+        opacity 0.3s ease,
+        visibility 0s linear 0.3s,
+        padding 0.3s ease;
+}
+
+/* This is the key fix - when expanded, restore height and add proper padding */
+.resume__content.show-content {
+    height: auto;
+    padding: 20px 30px 20px 50px;
+    opacity: 1;
+    visibility: visible;
+    transition: 
+        height 0.3s ease,
+        opacity 0.3s ease,
+        visibility 0s linear 0s,
+        padding 0.3s ease;
+}
+
+.resume__date-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    gap: var(--space-sm);
+}
+
+.resume__title {
+    margin-bottom: 0;
+    font-size: var(--h3-font-size);
+    flex: 1;
+    white-space: normal;
+    font-family: var(--second-font);
+}
+
+.resume__date {
+    white-space: nowrap;
+    font-size: var(--h5-font-size);
+    color: var(--title-color);
+    flex-shrink: 0;
+    margin-left: auto;
+    font-weight: 700;
+}
+
+.resume__description {
+    margin-top: var(--space-sm);
+    line-height: 1.7;
+}
+
+/* Media query for responsive layout */
+@media screen and (max-width: 768px) {
+    .resume__container {
+        grid-template-columns: 1fr;
+        padding: 0 var(--space-md);
+    }
+
+    .resume__item {
+        border-right: none !important;
+    }
+
+    /* Ensure icons stay visible */
+    .resume__icon {
+        right: 10px;
+    }
+
+    .resume__heading2 {
+        padding-top: 20px;
+    }
+    
+    /* Keep date and title on same line when possible, stack when needed */
+    .resume__date-title {
+        flex-wrap: wrap;
+    }
+    
+    .resume__content.show-content {
+        padding: 15px 30px 15px 30px;
+    }
+}
+
+/* For very small screens */
+@media screen and (max-width: 480px) {
+    .resume__title {
+        font-size: var(--small-font-size);
+    }
+    
+    .resume__date {
+        font-size: var(--tiny-font-size);
+    }
+    
+    .resume__content.show-content {
+        padding: 15px 20px;
+    }
+
+    .resume__heading2 {
+        padding-top: 20px;
+    }
+}

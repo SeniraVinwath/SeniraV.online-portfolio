@@ -1,0 +1,478 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* CSS Variables */
+:root {
+    /* colors */
+    --primary-color: hsl(355, 60%, 50%);         /* Modern muted red */
+    --title-color: hsl(0, 0%, 100%);             /* White for titles */
+    --text-color: hsl(0, 0%, 90%);               /* Light gray for body text */
+    --background-color: hsl(216, 18%, 16%);      /* Dark navy background */
+    --background-color-alt: hsl(213, 10%, 21%);  /* Slightly lighter for sections */
+    --container-color: hsl(217, 18%, 14%);       /* Inner containers */
+    --border-color: hsl(355, 30%, 50%);          /* Subtle red tint for borders */
+    --header-background-color: rgba(26, 30, 35, 0.95); /* Dark transparent background */
+    --header-shadow-color: rgba(0, 0, 0, 0.1);        /* Subtle shadow */
+    --text-shadow: 2px 2px hsl(0, 0%, 0%), -2px 2px hsl(0, 0%, 0%), 2px -2px hsl(0, 0%, 0%), -2px -2px hsl(0, 0%, 0%), 5px 5px 0 rgb(0 0 0 / 20%);
+
+    --first-gradient: linear-gradient(
+        0deg,
+        var(--background-color-alt) 0%,
+        var(--background-color) 100%
+    );
+    --second-gradient: linear-gradient(
+        180deg,
+        var(--background-color-alt) 0%,
+        var(--background-color) 100%
+    );
+    --third-gradient: linear-gradient(
+        180deg,
+        var(--background-color) 0%,
+        var(--background-color) 100%
+    );
+
+    /* typography - using fluid typography with clamp */
+    --body-font: "Jost", sans-serif;
+    --second-font: "Caveat", cursive;
+
+    /* Fluid typography using clamp(min, preferred, max) */
+    --biggest-font-size: clamp(40px, 8vw, 90px);
+    --h1-font-size: clamp(28px, 5vw, 44px);
+    --h2-font-size: clamp(22px, 3.5vw, 30px);
+    --h3-font-size: clamp(20px, 3vw, 28px);
+    --h4-font-size: clamp(18px, 2.5vw, 24px);
+    --h5-font-size: clamp(17px, 2.2vw, 22px);
+    --largest-font-size: clamp(16px, 2vw, 21px);
+    --larger-font-size: clamp(16px, 1.8vw, 20px);
+    --large-font-size: clamp(15px, 1.6vw, 18px);
+    --normal-font-size: clamp(14px, 1.4vw, 16px);
+    --small-font-size: clamp(13px, 1.3vw, 15px);
+    --smaller-font-size: clamp(12px, 1.2vw, 14px);
+    --tiny-font-size: clamp(11px, 1.1vw, 13px);
+
+    /* Spacing variables using relative units */
+    --space-xs: clamp(0.5rem, 1vw, 0.75rem);
+    --space-sm: clamp(0.75rem, 1.5vw, 1rem);
+    --space-md: clamp(1rem, 2vw, 1.5rem);
+    --space-lg: clamp(1.5rem, 3vw, 2rem);
+    --space-xl: clamp(2rem, 4vw, 3rem);
+    --space-xxl: clamp(3rem, 6vw, 5rem);
+
+    /* Button sizes */
+    --btn-height: clamp(45px, 5vh, 56px);
+    --btn-padding: clamp(20px, 4vw, 40px);
+    
+    /* Border radius */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 16px;
+    --border-radius-full: 9999px;
+
+    /* shadow */
+    --shadow: 5px 5px rgb(255 255 255/ 10%);
+
+    /* transition - now includes duration and property */
+    --transition: all 0.3s cubic-bezier(0.3, 0.3, 1);
+    /* Add a separate timing function variable for more flexibility */
+    --transition-timing: cubic-bezier(0.3, 0.3, 1);
+}
+
+/* Light theme */
+.light-theme {
+    --primary-color: hsl(355, 60%, 45%);          /* Muted red for highlights */
+    --title-color: hsl(30, 30%, 15%);             /* Dark warm brown for titles */
+    --text-color: hsl(30, 20%, 25%);              /* Medium brown for body text */
+    --background-color: hsl(38, 50%, 90%);        /* Old paper light brown background */
+    --background-color-alt: hsl(38, 45%, 85%);    /* Slightly deeper paper tone for sections */
+    --container-color: hsl(38, 55%, 95%);         /* Lighter container area, still warm */
+    --border-color: hsl(355, 40%, 75%);          /* Soft reddish-brown borders */
+    --header-background-color: rgba(223, 208, 175, 0.95); /* Rich aged-paper tone */
+    --header-shadow-color: rgba(0, 0, 0, 0.08);           /* Subtle soft shadow */
+    --text-shadow: 2px 2px hsl(38, 70%, 98%), -2px 2px hsl(38, 70%, 98%), 2px -2px hsl(38, 70%, 98%), -2px -2px hsl(38, 70%, 98%), 5px 5px 0 rgb(255 255 255 / 30%);
+
+    
+    --first-gradient: linear-gradient(
+        0deg,
+        var(--background-color-alt) 0%,
+        var(--background-color) 100%
+    );
+    --second-gradient: linear-gradient(
+        180deg,
+        var(--background-color-alt) 0%,
+        var(--background-color) 100%
+    );
+    --third-gradient: linear-gradient(
+        180deg,
+        var(--background-color) 0%,
+        var(--background-color) 100%
+    );
+
+    /* shadow */
+    --shadow: 5px 5px rgb(0 0 0/ 20%);
+
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%; /* Base font size for rem units */
+    scroll-behavior: smooth;
+}
+
+button,
+input,
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+body {
+    color: var(--text-color);
+    background-color: var(--background-color);
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--title-color);
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+}
+
+ul {
+    list-style: none;
+}
+
+p {
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+input,
+textarea,
+button {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Reusable css */
+.container {
+    width: 100%;
+    max-width: min(1300px, 95%);
+    padding-inline: var(--space-sm);
+    margin-inline: auto;
+}
+
+.grid {
+    display: grid;
+    gap: 24px;
+}
+
+.text-cs {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.btn,
+.hero__link {
+    color: var(--title-color);
+    font-size: var(--tiny-font-size);
+    font-weight: 700;
+    height: var(--btn-height);
+    display: grid;
+    place-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.btn {
+    border: 2px solid var(--border-color);
+    padding-inline: var(--btn-padding);
+    border-radius: var(--border-radius-full);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background-color: var(--primary-color);
+    border-radius: inherit;
+    transform: scale(0.3);
+    filter: blur(10px);
+    opacity: 0;
+    transition: var(--transition);
+    z-index: -1;
+}
+
+.btn:hover::before {
+    transform: scale(1);
+    filter: blur(0);
+    opacity: 1;
+}
+
+.shape {
+    position: absolute;
+    opacity: 0.6;
+    max-width: min(20vw, 226px);
+    max-height: min(20vw, 226px);
+}
+
+.section {
+    padding-bottom: 150px;
+}
+
+.section__title,
+.section__subtitle {
+    text-align: center;
+}
+
+.section__title {
+    font-size: var(--h1-font-size);
+}
+
+.section__subtitle {
+    color: var(--primary-color);
+    font-size: var(--smaller-font-size);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 60px;
+}
+
+.section__subtitle span {
+    font-family: var(--second-font);
+    color: var(--title-color);
+    font-size: var(--h3-font-size);
+    text-transform: capitalize;
+    margin-left: 10px;
+}
+
+.card {
+    background-color: var(--container-color);
+    overflow: hidden;
+    text-align: left;
+    position: relative;
+}
+
+.card-one {
+    padding: 30px 35px;
+    border-radius: 18px;
+}
+
+.card-two {
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--title-color);
+    font-weight: 700;
+}
+
+.link__icon {
+    color: var(--primary-color);
+    margin-left: 20px;
+    transition: var(--transition);
+    size: var(--h2-font-size);
+}
+
+.link:hover .link__icon {
+    margin-left: 15px;
+    size: var(--h2-font-size);
+}
+
+.c__shape {
+    right: 0px;
+    bottom: -2px;
+    width: 200px;
+    height: 200px;
+}
+
+/* Main app styles */
+.main {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Fix for any potential horizontal overflow */
+#root {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+/* Ensure all sections fill width */
+section {
+    width: 100%;
+    padding: var(--space-xl) 0;
+}
+
+/* CSS Grid utilities */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr));
+    gap: var(--space-md);
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+    gap: var(--space-md);
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+    gap: var(--space-md);
+}
+
+/* Aspect ratio container */
+.aspect-ratio {
+    position: relative;
+    width: 100%;
+}
+
+.aspect-ratio--1x1 {
+    aspect-ratio: 1/1;
+}
+
+.aspect-ratio--4x3 {
+    aspect-ratio: 4/3;
+}
+
+.aspect-ratio--16x9 {
+    aspect-ratio: 16/9;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Animation utility classes */
+.animate-fade-in {
+    animation: fadeIn 0.7s cubic-bezier(0.3, 0.3, 1) forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.7s cubic-bezier(0.3, 0.3, 1) forwards;
+}
+
+.animate-slide-down {
+    animation: slideDown 0.7s cubic-bezier(0.3, 0.3, 1) forwards;
+}
+
+/* Create animation delay utilities */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Set reasonable max-width for ultra-wide screens */
+@media screen and (min-width: 2000px) {
+    .container {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+}
+
+/* Dark mode support (in case you add it in the future) */
+
+/* Reduce motion preference support */
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    .btn, .hero__link, .home__socials {
+        display: none;
+    }
+}

@@ -1,0 +1,29 @@
+.job-title {
+    display: inline-block;
+    transition: opacity 0.5s ease;
+  }
+  
+  .fade-out {
+    opacity: 0;
+  }
+  
+  .fade-in {
+    opacity: 1;
+  }
+  
+  /* Preserve the space to prevent layout shifts */
+  .job-title b, .job-title i {
+    display: inline-block;
+    transition: inherit;
+  }
+  
+  .job-title i {
+    font-family: var(--second-font);
+    font-size: var(--h1-font-size);
+    color: var(--primary-color);
+    opacity: 0.8;
+    margin-left: 5px;
+    font-weight: 700;
+  }
+
+  

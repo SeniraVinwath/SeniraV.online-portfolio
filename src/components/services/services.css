@@ -1,0 +1,97 @@
+.services {
+    background-image: var(--second-gradient);
+}
+
+.services__subtitle {
+    color: var(--title-color);
+    font-size: var(--tiny-font-size);
+    font-weight: 700;
+    margin-bottom: 65px;
+    display: block;
+}
+
+.services__title {
+    font-size: var(--h4-font-size);
+    margin-bottom: 15px;
+}
+
+.services__description {
+    min-height: 175px;
+}
+
+.swiper-wrapper {
+    margin-bottom: 52px;
+}
+
+.services__container {
+    text-align: center;
+}
+
+.swiper-horizontal> .swiper-pagination-bullets {
+    width: auto;
+    position: relative;
+    display: inline-block;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(50%);
+    height: 2px;
+    width: 100%;
+    background-color: var(--title-color);
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+    border: 2px solid var(--title-color);
+    background-color: var(--container-color);
+    z-index: 1;
+    position: relative;
+    opacity: 1;
+    margin: 0;
+    transition: all 0.3s var(--transition);
+    top: 1px;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet:not(:last-child) {
+    margin-right: 20px;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet-active {
+    background-color: var(--primary-color);
+    width: 13px;
+    height: 13px;
+    top: 4px;
+}
+
+/* Fix for the shape image size in mobile view */
+.services__item .c__shape {
+    width: 200px;
+    height: 200px;
+    min-width: 150px;
+    min-height: 150px;
+    object-fit: contain;
+    right: 0;
+    bottom: -2px;
+}
+
+/* Add horizontal padding to cards in mobile view */
+@media screen and (max-width: 767px) {
+    .services__item.card.card-one {
+        padding: 30px 30px;
+        width: calc(100% - 2 * var(--space-lg));
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* Ensure the shape image maintains proper proportion */
+    .services__item .c__shape {
+        width: 75%;
+        min-width: 200px;
+        height: auto;
+        right: 0px;
+        bottom: 10px;
+    }
+}
