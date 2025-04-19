@@ -48,13 +48,13 @@ export const Home = () => {
           </p>
           
           <div className='home__socials'>
-            <a href="" className="home__social-link">
+            <a href="https://www.linkedin.com/in/senira-vinwath-0732392b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="home__social-link">
               <BsLinkedin/>
             </a>
-            <a href="" className="home__social-link">
+            <a href="https://github.com/SeniraVinwath" className="home__social-link">
               <FaGithub/>
             </a>
-            <a href="" className="home__social-link">
+            <a href="https://www.instagram.com/seniya_365?igsh=cGJreWpsc2Zsem5q" className="home__social-link">
               <AiFillInstagram/>
             </a>
           </div>
