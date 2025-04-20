@@ -47,9 +47,9 @@ const JobTitleAnimator = () => {
   };
   
   return (
-    <div className={`job-title ${isAnimating ? 'fade-out' : 'fade-in'}`}>
+    <span className={`job-title ${isAnimating ? 'fade-out' : 'fade-in'}`}>
       {formatTitle(titles[currentTitleIndex])}
-    </div>
+    </span>
   );
 };
 

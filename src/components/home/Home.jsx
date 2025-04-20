@@ -96,6 +96,48 @@ export const Home = () => {
           <img src={shapeTwo} alt="" className="shape shape__3" />
         </div>
       </div>
+
+      {/* Hidden content for SEO - only visible to search engines */}
+      <div className="seo-content" style={{ 
+        position: 'absolute', 
+        width: '1px', 
+        height: '1px', 
+        padding: '0', 
+        margin: '-1px', 
+        overflow: 'hidden', 
+        clip: 'rect(0, 0, 0, 0)', 
+        whiteSpace: 'nowrap', 
+        border: '0' 
+      }}>
+        <h2>About Senira Vinwath - Software Engineer & UI Designer</h2>
+        <p>
+          Senira Vinwath (also known as Seniya365) is a skilled Software Engineer and UI Designer from Sri Lanka. 
+          With expertise in Full-stack Development, UI/UX Design, and Creative Design, Senira offers comprehensive
+          development services for websites, applications, and digital products.
+        </p>
+        <h3>Technical Skills & Expertise</h3>
+        <p>
+          Proficient in Java, JavaScript, Python, React, WordPress, Node.js, and various design tools including
+          Figma and Photoshop. Experienced in developing responsive websites, mobile applications, and
+          implementing modern UI/UX practices for optimal user experience.
+        </p>
+        <h3>Professional Experience</h3>
+        <p>
+          Co-Founder & CTO at Ceyltra (PVT) LTD., leading all technology operations, UI/UX development, and
+          product strategy. Previous experience includes work as a Graphic Designer at Spark Entertainment
+          and as Tech Lead for the Trip Ceylon university project.
+        </p>
+        <h3>Education & Background</h3>
+        <p>
+          Graduate from the University of Westminster with a focus on software engineering and design. Committed
+          to delivering high-quality, creative solutions for clients and businesses.
+        </p>
+        <h3>Portfolio Highlights</h3>
+        <p>
+          Notable projects include the Ceyltra website, Trip Ceylon travel app, and various design and
+          development work for clients across different industries.
+        </p>
+      </div>
     </section>
   )
 };
