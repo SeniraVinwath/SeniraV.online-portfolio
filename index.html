@@ -30,77 +30,71 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://seniya365.me/">
 
-    <!-- Structured Data -->
+    <!-- Structured Data for Person -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Person",
-          "@id": "https://seniya365.me#person",
-          "name": "Senira Vinwath",
-          "alternateName": "Seniya365",
-          "url": "https://seniya365.me",
-          "image": "https://seniya365.me/assets/profile-img3-DoO5Ljkz.png",
-          "description": "Software Engineer and UI Designer with expertise in React, Java, and WordPress development.",
-          "jobTitle": "Software Engineer & UI Designer",
-          "worksFor": {
-            "@type": "Organization",
-            "name": "Ceyltra (PVT) LTD.",
-            "url": "https://ceyltra.com"
-          },
-          "alumniOf": {
-            "@type": "EducationalOrganization",
-            "name": "University of Westminster",
-            "url": "https://www.westminster.ac.uk/"
-          },
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Boossa",
-            "addressRegion": "Southern Province",
-            "addressCountry": "Sri Lanka"
-          },
-          "knowsAbout": [
-            "React", "JavaScript", "Java", "UI/UX Design", "WordPress", "Full-Stack Development"
-          ],
-          "sameAs": [
-            "https://github.com/SeniraVinwath",
-            "https://www.linkedin.com/in/senira-vinwath-0732392b7",
-            "https://www.instagram.com/seniya_365"
-          ],
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://seniya365.me"
-          }
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://seniya365.me#website",
-          "url": "https://seniya365.me",
-          "name": "Senira Vinwath Portfolio",
-          "description": "Professional portfolio website of Senira Vinwath, Software Engineer and UI Designer",
-          "author": {
-            "@id": "https://seniya365.me#person"
-          },
-          "inLanguage": "en-US",
-          "copyrightYear": "2024",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://seniya365.me/search?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
-        },
-        {
-          "@type": "ProfilePage",
-          "@id": "https://seniya365.me#profilepage",
-          "url": "https://seniya365.me",
-          "dateCreated": "2024-01-01",
-          "dateModified": "2024-04-21",
-          "mainEntity": {
-            "@id": "https://seniya365.me#person"
-          }
-        }
+      "@type": "Person",
+      "name": "Senira Vinwath",
+      "url": "https://seniya365.me",
+      "image": "https://seniya365.me/assets/profile-img3-DoO5Ljkz.png",
+      "description": "Software Engineer and UI Designer with expertise in React, Java, and WordPress development.",
+      "jobTitle": "Software Engineer & UI Designer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Ceyltra (PVT) LTD.",
+        "url": "https://ceyltra.com"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "University of Westminster",
+        "url": "https://www.westminster.ac.uk/"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Boossa",
+        "addressRegion": "Southern Province",
+        "addressCountry": "Sri Lanka"
+      },
+      "knowsAbout": ["React", "JavaScript", "Java", "UI/UX Design", "WordPress", "Full-Stack Development"],
+      "sameAs": [
+        "https://github.com/SeniraVinwath",
+        "https://www.linkedin.com/in/senira-vinwath-0732392b7",
+        "https://www.instagram.com/seniya_365"
       ]
+    }
+    </script>
+
+    <!-- Structured Data for WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://seniya365.me",
+      "name": "Senira Vinwath Portfolio",
+      "description": "Professional portfolio website of Senira Vinwath, Software Engineer and UI Designer",
+      "author": {
+        "@type": "Person",
+        "name": "Senira Vinwath"
+      },
+      "inLanguage": "en-US",
+      "copyrightYear": "2024"
+    }
+    </script>
+
+    <!-- Structured Data for ProfilePage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "url": "https://seniya365.me",
+      "dateCreated": "2024-01-01",
+      "dateModified": "2024-04-21",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Senira Vinwath",
+        "url": "https://seniya365.me"
+      }
     }
     </script>
   </head>
