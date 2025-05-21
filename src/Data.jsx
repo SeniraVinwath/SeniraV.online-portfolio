@@ -14,6 +14,9 @@ import Project13 from './assets/project13.jpg';
 import Project14 from './assets/project14.jpg';
 import Project15 from './assets/project15.jpg';
 import Project16 from './assets/project16.jpg';
+import Project18 from './assets/project18.jpg';
+import Project17 from './assets/project17.jpg';
+import Project19 from './assets/project19.jpg';
 
 import Testimonial1 from './assets/testimonial1.jpg';
 import Testimonial2 from './assets/testimonial2.jpg';
@@ -173,7 +176,23 @@ export const projects = [
       'Led the frontend and backend for Trip Ceylon, a comprehensive travel companion app. Buit with React Native (frontend), Node.js + Supabase (backend), Python (itinerary generator). Features include itinerary builder, luggage tracking & social connections.',
   },
   {
-    id: 3,
+  id: 3,
+  img: Project18,
+  category: 'Software',
+  title: 'Cancer Prediction ML System',
+  description:
+    'Built classification and regression models to predict cancer mortality and survival. Applied Naïve Bayes, Logistic Regression, KNN, and Decision Trees with stratified training. Achieved 80% recall for critical mortality cases.',
+  },
+  {
+  id: 4,
+  img: Project19,
+  category: 'Software',
+  title: 'Bookstore RESTful API',
+  description:
+    'Developed a RESTful API for a bookstore using Java, JAX-RS, and JSON. Implemented CRUD operations, custom exceptions, and HTTP status handling. Thoroughly tested endpoints via Postman for reliability.',
+  },
+  {
+    id: 5,
     img: Project3,
     category: 'Web',
     title: 'Cozy Villa Website',
@@ -181,7 +200,7 @@ export const projects = [
       'Built a clean, content focused website for Cozy Villa using WordPress and Elementor. Customized layout and booking sections for a luxury homestay experience. Designed for easy updates by non technical owners.',
   },
   {
-    id: 4,
+    id: 6,
     img: Project2,
     category: 'Software',
     title: 'Event Ticketing Simulator',
@@ -189,7 +208,15 @@ export const projects = [
       'Developed a real time ticketing simulator using Java, Spring Boot (backend), React (frontend), and MySQL. Included role based access (admin/user), ticket validation logic, and responsive admin panels.',
   },
   {
-    id: 5,
+  id: 7,
+  img: Project17,
+  category: 'Software',
+  title: 'Max Flow Network Solver',
+  description:
+    'Implemented Edmonds-Karp algorithm using adjacency lists and BFS to compute max flow. Optimized for sparse graphs, achieving O(VE²) time complexity and 1.13ms runtime on benchmark tests.',
+  },
+  {
+    id: 8,
     img: Project5,
     category: 'Software',
     title: 'Student Management System',
@@ -197,7 +224,7 @@ export const projects = [
       'Created a Java-based student management system that uses sorting algorithms and GUI elements to manage academic data. Emphasized efficient data access and clear structure.',
   },
   {
-    id: 6,
+    id: 9,
     img: Project6,
     category: 'Software',
     title: 'Personal Finance Tracker',
@@ -205,7 +232,7 @@ export const projects = [
       'Built a desktop finance management app using Python and Tkinter. Included income/expense tracking, monthly summaries, and local storage support. Designed for personal use with minimal clutter.',
   },
   {
-    id: 7,
+    id: 10,
     img: Project7,
     category: 'Web',
     title: 'Aquatic Website (SDG Themed)',
@@ -213,7 +240,7 @@ export const projects = [
       'Designed a themed educational website to raise awareness about Sustainable Development Goal 14 (Life Below Water). Tech stack: HTML, CSS, JavaScript. Featured animations and structured info cards.',
   },
   {
-    id: 8,
+    id: 11,
     img: Project8,
     category: 'Software',
     title: 'Color Guessing Game',
@@ -223,7 +250,7 @@ export const projects = [
 
   // 🔥 Branding Projects
   {
-    id: 9,
+    id: 12,
     img: Project9,
     category: 'Branding',
     title: 'Ceyltra Visual Identity',
@@ -231,7 +258,7 @@ export const projects = [
       'I handled the complete branding for Ceyltra, designing the logo, banners, and all social media content. This included consistent brand color themes, modern typography, and layout standards. Delivered a visually compelling identity aligned with the travel tech market.',
   },
   {
-    id: 10,
+    id: 13,
     img: Project10, // Replace with a preview image if available
     category: 'Branding',
     title: 'Auspro Business Solutions',
@@ -241,7 +268,7 @@ export const projects = [
 
   // 🎨 Graphic Design – Ceyltra
   {
-    id: 11,
+    id: 14,
     img: Project11,
     category: 'Graphic',
     title: 'Ceyltra Web Thumbnails',
@@ -249,7 +276,7 @@ export const projects = [
       'Created dozens of custom designed thumbnail images for Ceyltra’s main pages and service sections, ensuring consistency with the site’s UI. Used Photoshop and layout tools to produce clean, responsive friendly visuals tailored for mobile and web.',
   },
   {
-    id: 12,
+    id: 15,
     img: Project12,
     category: 'Graphic',
     title: 'Ceyltra Tour Brochure',
@@ -257,7 +284,7 @@ export const projects = [
       'Designed a detailed brochure featuring all Ceyltra one day and round tour itineraries. The layout included maps, icons, QR codes, and clear tour breakdowns. Tools used: Photoshop.',
   },
   {
-    id: 13,
+    id: 16,
     img: Project13,
     category: 'Graphic',
     title: 'Ceyltra Tour Leaflets',
@@ -267,7 +294,7 @@ export const projects = [
 
   // 🎶 Graphic Design – Spark Entertainment
   {
-    id: 14,
+    id: 17,
     img: Project14,
     category: 'Graphic',
     title: 'Boom Box Band Brochure',
@@ -275,7 +302,7 @@ export const projects = [
       'Designed a multi page brochure for Boom Box Band (Sri Lanka) under Spark Entertainment, highlighting the band’s offerings, event packages, and branding. Used layered visuals and themed motifs.',
   },
   {
-    id: 15,
+    id: 18,
     img: Project15,
     category: 'Graphic',
     title: 'Music Video Visual Effects',
@@ -285,7 +312,7 @@ export const projects = [
 
   // 🧩 NFT Project
   {
-    id: 16,
+    id: 19,
     img: Project16,
     category: 'Graphic',
     title: 'NFT Collection & Generator',
